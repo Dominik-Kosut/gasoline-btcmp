@@ -14,6 +14,7 @@ import { CarsComponent } from './cars/cars.component';
 import { DetailsComponent } from './details/details.component';
 import { FormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
+import { NavigationComponent } from './navigation/navigation.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { AppRoutingModule } from './app-routing.module';
     UserDetailComponent,
     UserEditComponent,
     CarsComponent,
-    DetailsComponent
+    DetailsComponent,
+    NavigationComponent
   ],
   imports: [
     HttpClientModule,
