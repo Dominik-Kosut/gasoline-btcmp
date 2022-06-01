@@ -1,1 +1,12 @@
-<h3>User detail</h3>
+<div *ngIf="user">
+    <h3>User detail</h3>
+    <p>User number: {{user.id}}</p>
+    <p>Name: {{user.name}}</p>
+    <p>Surname: {{user.surname}}</p>
+    <p>Emial: {{user.email}}</p>
+    <p>Age: {{user.age}}</p>
+    <span>
+        <button class="btn btn-warning" (click)="onEditUser(user.id)">Edit user</button>
+        <button class="btn btn-danger" (click)="onDeleteUser(user.id)">Delete user</button>
+    </span>
+</div>

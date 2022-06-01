@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { User } from '../users.module';
 import { UsersService } from '../users.service';
 
@@ -8,19 +9,41 @@ import { UsersService } from '../users.service';
   styleUrls: ['./user-list.component.css']
 })
 export class UserListComponent implements OnInit {
-  constructor(private usersServ: UsersService) { }
+  constructor(private usersServ: UsersService,
+              private router: Router) { }
 
-  items: number[] = [1,2,3,4,5,6,7];
   users: User[];
 
   
 
   ngOnInit(): void {
+    this.getAllOwners();
+    this.usersServ.usersChange.subscribe({
+      next: (status: boolean) => {
+        this.getAllOwners();
+      }
+    });
+  }
+
+  onAddNewUser(){
+    this.router.navigate(['new-user'])
+  }
+
+
+
+
+
+
+
+
+
+
+  private getAllOwners(){
     this.usersServ.getAllUsers().subscribe({
       next: (response: User[]) => {
         this.users = response;
       }
-    })
+    });
   }
 
 }

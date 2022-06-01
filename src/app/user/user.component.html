@@ -1,1 +1,76 @@
-<p>user works!</p>
+<h2 class="text-center">Vytvořit nového uživatele</h2>
+<div class="row">
+    <div class="col-xs-8 col-md-5 col-lg-3 col-centered">
+        <form (ngSubmit)="onSubmit()" #f="ngForm">
+            <div id="user-data" class="text-center">
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input type="text"
+                           id="username"
+                           class="form-control text-center"
+                           pattern="[A-Za-z]+"
+                           ngModel
+                           name="name"
+                           required
+                           #name="ngModel">
+                    <span class="help-block" *ngIf="!name.valid && name.touched">Please enter a valid name!</span>
+                </div>
+                <div class="form-group">
+                    <label for="surname">Surname</label>
+                    <input type="text"
+                           id="usersurname"
+                           class="form-control text-center"
+                           pattern="[A-Za-z]+"
+                           ngModel
+                           name="surname"
+                           required
+                           #surname="ngModel">
+                    <span class="help-block" *ngIf="!surname.valid && surname.touched">Please enter a valid surname!</span>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email"
+                           id="useremail"
+                           class="form-control text-center"
+                           ngModel
+                           name="email"
+                           required
+                           email
+                           #email="ngModel">
+                    <span class="help-block" *ngIf="!email.valid && email.touched">Please enter a valid email!</span>
+                </div>
+                <div class="form-group">
+                    <label for="age">Age</label>
+                    <input type="number"
+                           id="userage"
+                           class="form-control text-center"
+                           ngModel
+                           name="age"
+                           required
+                           pattern="^(?:[1][8-9]|[2-9][0-9])"
+                           #age="ngModel">
+                    <span class="help-block" *ngIf="!age.valid && age.touched">Your age must be between 18 and 99!</span>
+                </div>
+
+                <!-- <div class="input-group">
+                    <span class="pull-left">
+                      <input type="radio"
+                             ngModel
+                             name="radio"
+                             requiredTrue>
+                    </span>
+                    <p class="text-left" style="margin-left: 30px;">nejaky texdsf sdf sdf sdf sdf asd asd as das dsad asd sa dasd sad t</p>
+                </div> -->
+
+                
+                <div>
+                    <span class="pull-right">
+                        <button class="btn btn-success" type="submit" [disabled]="!f.valid">Save</button>
+                        <!-- <button class="btn btn-success" type="submit">Save</button> -->
+                        <button class="btn btn-danger" type="button" [routerLink]="['/users']">Cancel</button>
+                    </span>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

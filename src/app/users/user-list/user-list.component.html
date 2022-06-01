@@ -1,4 +1,12 @@
-<h3>List of users</h3>
+<div>
+    <h2 class="text-left">
+        List of users
+        <span class="pull-right">
+            <button class="btn btn-success" (click)="onAddNewUser()">+ Add new user</button>
+        </span>
+    </h2>
+</div>
+<br>
 <div class="list-group">
     <div *ngFor="let user of users">
         <app-user-item [userInfo]="user"></app-user-item>
