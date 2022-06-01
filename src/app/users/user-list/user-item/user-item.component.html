@@ -1,1 +1,15 @@
-<p>Item #xx</p>
+<a
+    routerLinkActive="active"
+    class="list-group-item clearfix"
+    [routerLink]="['/users', user?.id]">
+    <div class="pull-left">
+        <h4 class="list-goup-item-heading">Name: {{user?.name}} {{user?.surname}}</h4>
+        <p class="list-goup-item-text">Email: {{user?.email}}</p>
+        <p class="list-goup-item-text">Age: {{user?.age}}</p>
+    </div>
+    <span class="pull-right">
+        <img src="https://icons-for-free.com/download-icon-man+person+profile+user+worker+icon-1320190557331309792_512.png"
+                class="img-responsive"
+                style="max-height: 100px;">
+    </span>
+</a>

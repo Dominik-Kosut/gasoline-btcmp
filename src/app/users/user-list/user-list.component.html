@@ -1,6 +1,6 @@
 <h3>List of users</h3>
 <div class="list-group">
-    <div *ngFor="let item of items">
-        <app-user-item></app-user-item>
+    <div *ngFor="let user of users">
+        <app-user-item [userInfo]="user"></app-user-item>
     </div>
 </div>
