@@ -1,14 +1,18 @@
-<div>
-    <h2 class="text-left">
-        List of users
-        <span class="pull-right">
-            <button class="btn btn-success" (click)="onAddNewUser()">+ Add new user</button>
-        </span>
-    </h2>
-</div>
-<br>
-<div class="list-group">
-    <div *ngFor="let user of users">
-        <app-user-item [userInfo]="user"></app-user-item>
+<div class="row">
+    <div class="col-xs-10 col-xs-offset-1">
+        <div>
+            <h2 class="text-left">
+                LIST OF USERS
+                <span class="pull-right">
+                    <button class="btn btn-success" (click)="onAddNewUser()">+ Add new user</button>
+                </span>
+            </h2>
+        </div>
+        <hr>
+        <div class="list-group">
+            <div *ngFor="let user of users">
+                <app-user-item [userInfo]="user"></app-user-item>
+            </div>
+        </div>
     </div>
 </div>

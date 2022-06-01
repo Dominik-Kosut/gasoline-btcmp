@@ -1,12 +1,31 @@
-<div *ngIf="user">
-    <h3>User detail</h3>
-    <p>User number: {{user.id}}</p>
-    <p>Name: {{user.name}}</p>
-    <p>Surname: {{user.surname}}</p>
-    <p>Emial: {{user.email}}</p>
-    <p>Age: {{user.age}}</p>
-    <span>
-        <button class="btn btn-warning" (click)="onEditUser(user.id)">Edit user</button>
-        <button class="btn btn-danger" (click)="onDeleteUser(user.id)">Delete user</button>
-    </span>
+
+
+<div class="row" *ngIf="user">
+    <div class="col-xs-8 col-xs-offset-2 text-center">
+        <h2>USER DETAIL</h2>
+        <hr>
+        <div class="panel panel-success">
+            <div class="panel-heading">
+                <h4><b>User #{{user.id}}</b></h4>
+            </div>
+            <div class="panel-body">
+                <h4>NAME</h4>
+                <p class="well well-sm">{{user.name}}</p>
+
+                <h4>SURNAME</h4>
+                <p class="well well-sm">{{user.surname}}</p>
+
+                <h4>EMAIL</h4>
+                <p class="well well-sm">{{user.email}}</p>
+
+                <h4>AGE</h4>
+                <p class="well well-sm">{{user.age}}</p>
+
+                <span class="pull-right">
+                    <button class="btn btn-warning" (click)="onEditUser(user.id)">Edit user</button>
+                    <button class="btn btn-danger" (click)="onDeleteUser(user.id)">Delete user</button>
+                </span>
+            </div>
+        </div>
+    </div>
 </div>
