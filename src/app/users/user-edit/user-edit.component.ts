@@ -17,27 +17,27 @@ export class UserEditComponent implements OnInit {
   @ViewChild('f') signupForm: NgForm;
 
   user: User;
-  name: string;
-  surname: string;
-  email: string;
 
   ngOnInit(): void {
     this.usersSrv.getUserById(+this.route.snapshot.params['id']).subscribe({
       next: (resp: User) => {
         this.user = resp;
-        this.name = resp.name;
-        this.surname = resp.surname;
-        this.email = resp.email;
       }
     });
   }
+  
   onSubmitForm(){
-    console.log(this.name);
+    this.user.name = this.signupForm.value.name;
+    this.user.surname = this.signupForm.value.surname;
+    this.user.email = this.signupForm.value.email;
+    this.usersSrv.updateUser(this.user.id, this.user).subscribe({
+      next: (response: User) => {
+        this.usersSrv.usersChange.next(true);
+        this.router.navigate(['../'], {relativeTo: this.route});
+      }
+    });
   }
 
-  onEdit(){
-    console.log(this.name);
-  }
 
 
 }

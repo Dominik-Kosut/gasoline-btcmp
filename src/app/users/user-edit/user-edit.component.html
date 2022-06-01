@@ -1,36 +1,70 @@
-<h3>Edit</h3>
 <form (ngSubmit)="onSubmitForm()" #f="ngForm">
-    <div id="user-data">
-        <div class="form-group">
-            <label for="name">Name</label>
-            <input type="text"
-                   id="username"
-                   class="form-control"
-                   [ngModel]="name"
-                   name="username">
-        </div>
-        <div class="form-group">
-            <label for="surname">Surname</label>
-            <input type="text"
-                   id="usersurname"
-                   class="form-control"
-                   [ngModel]="surname"
-                   name="usersurname">
-        </div>
-        <div class="form-group">
-            <label for="email">Email</label>
-            <input type="email"
-                   id="useremail"
-                   class="form-control"
-                   [ngModel]="email"
-                   name="useremail">
-        </div>
-        
-        <div>
-            <span class="pull-right">
-                <button class="btn btn-success" type="submit">Save</button>
-                <button class="btn btn-danger" type="button" routerLink="../">Cancel</button>
-            </span>
+    <div class="row" *ngIf="user">
+        <div class="col-xs-8 col-xs-offset-2 text-center">
+            <h2>USER EDIT</h2>
+            <hr>
+            <div class="panel panel-warning">
+
+                <div class="panel-heading">
+                    <h4><b>User #{{user.id}}</b></h4>
+                </div>
+
+                <div class="panel-body">
+                    <div class="form-group">
+                        <label for="name">
+                            <h4>NAME</h4>
+                        </label>
+                        <input 
+                            type="text"
+                            id="username"
+                            class="form-control text-center"
+                            [ngModel]="user.name"
+                            name="name"
+                            pattern="[A-Za-zÀ-ž]+"
+                            required
+                            #uname="ngModel">
+                        <span class="help-block" *ngIf="!uname.valid && uname.touched">Please enter a valid name!</span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="surname">
+                            <h4>SURNAME</h4>
+                        </label>
+                        <input 
+                            type="text"
+                            id="usersurname"
+                            class="form-control text-center"
+                            [ngModel]="user.surname"
+                            name="surname"
+                            pattern="[A-Za-zÀ-ž]+"
+                            required
+                            #usurname="ngModel">
+                        <span class="help-block" *ngIf="!usurname.valid && usurname.touched">Please enter a valid surname!</span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">
+                            <h4>EMAIL</h4>
+                        </label>
+                        <input 
+                            type="email"
+                            id="useremail"
+                            class="form-control text-center"
+                            [ngModel]="user.email"
+                            name="email"
+                            required
+                            email
+                            #uemail="ngModel">
+                        <span class="help-block" *ngIf="!uemail.valid && uemail.touched">Please enter a valid email!</span>
+                    </div>
+
+                    <span class="pull-right">
+                        <button class="btn btn-success" type="submit" [disabled]="!f.valid">Save</button>
+                        <button class="btn btn-danger" type="button" routerLink="../">Cancel</button>
+                    </span>
+
+                </div>
+            </div>
         </div>
     </div>
 </form>

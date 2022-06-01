@@ -26,4 +26,8 @@ export class UsersService{
     addNewUser(newOwner: User){
         return this.http.post<User>(this.apiServerUrl + '/owners', newOwner);
     }
+
+    updateUser(id: number, owner: User){
+        return this.http.put<User>(this.apiServerUrl + `/owners/${id}`, owner);
+    }
 }
