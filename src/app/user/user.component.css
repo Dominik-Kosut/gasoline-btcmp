@@ -2,11 +2,6 @@
     margin-left: 5px;
 }
 
-.col-centered{
-    float: none;
-    margin: 0 auto;
-}
-
 input.ng-invalid.ng-touched {
     border: 2px solid red;
 }
