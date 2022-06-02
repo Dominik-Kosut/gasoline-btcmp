@@ -1,0 +1,14 @@
+<a  routerLinkActive="active"
+    class="list-group-item clearfix"
+    [routerLink]="['/cars', car?.id]">
+    <div class="pull-left">
+        <h4 class="list-goup-item-heading">Car type: {{car?.carType}}</h4>
+        <p class="list-goup-item-text">Car color: {{car?.color}}</p>
+        <!-- <p class="list-goup-item-text">Age: {{user?.age}}</p> -->
+    </div>
+    <span class="pull-right">
+        <img src="https://cdn-icons-png.flaticon.com/512/215/215825.png"
+                class="img-responsive"
+                style="max-height: 100px;">
+    </span>
+</a>

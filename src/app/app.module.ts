@@ -15,6 +15,12 @@ import { DetailsComponent } from './details/details.component';
 import { FormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { NavigationComponent } from './navigation/navigation.component';
+import { CarComponent } from './car/car.component';
+import { CarListComponent } from './cars/car-list/car-list.component';
+import { CarItemComponent } from './cars/car-list/car-item/car-item.component';
+import { CarInitComponent } from './cars/car-init/car-init.component';
+import { CarDetailComponent } from './cars/car-detail/car-detail.component';
+import { CarEditComponent } from './cars/car-edit/car-edit.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +34,13 @@ import { NavigationComponent } from './navigation/navigation.component';
     UserEditComponent,
     CarsComponent,
     DetailsComponent,
-    NavigationComponent
+    NavigationComponent,
+    CarComponent,
+    CarListComponent,
+    CarItemComponent,
+    CarInitComponent,
+    CarDetailComponent,
+    CarEditComponent
   ],
   imports: [
     HttpClientModule,

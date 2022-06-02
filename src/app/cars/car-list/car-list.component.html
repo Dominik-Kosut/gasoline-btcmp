@@ -1,0 +1,21 @@
+<div class="row">
+    <div class="col-xs-10 col-xs-offset-1">
+        <div>
+            <h2 class="text-left">
+                LIST OF CARS
+                <span class="pull-right">
+                    <button class="btn btn-success" (click)="onAddNewCar()">
+                        <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+                        Add new car
+                    </button>
+                </span>
+            </h2>
+        </div>
+        <hr>
+        <div class="list-group">
+            <div *ngFor="let car of cars">
+                <app-car-item [carInfo]="car"></app-car-item>
+            </div>
+        </div>
+    </div>
+</div>

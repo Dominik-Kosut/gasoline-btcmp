@@ -1,0 +1,76 @@
+<form (ngSubmit)="onSubmitForm()" #f="ngForm">
+    <div class="row" *ngIf="car">
+        <div class="col-xs-8 col-xs-offset-2 text-center">
+            <h2>CAR EDIT</h2>
+            <hr>
+            <div class="panel panel-warning">
+
+                <div class="panel-heading">
+                    <h4><b>Car #{{car.id}}</b></h4>
+                </div>
+
+                <div class="panel-body">
+                    <div class="form-group">
+                        <label for="type">
+                            <h4>CAR TYPE</h4>
+                        </label>
+                        <input 
+                            type="text"
+                            id="type"
+                            class="form-control text-center"
+                            [ngModel]="car.carType"
+                            name="type"
+                            pattern="[A-Za-zÀ-ž\s -]+"
+                            required
+                            #carType="ngModel">
+                        <span class="help-block" *ngIf="!carType.valid && carType.touched">Please enter a valid car type!</span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="color">
+                            <h4>COLOR</h4>
+                        </label>
+                        <input 
+                            type="text"
+                            id="color"
+                            class="form-control text-center"
+                            [ngModel]="car.color"
+                            name="color"
+                            pattern="[A-Za-zÀ-ž]+"
+                            required
+                            #carColor="ngModel">
+                        <span class="help-block" *ngIf="!carColor.valid && carColor.touched">Please enter a valid color!</span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="fuel">
+                            <h4>FUEL TYPE</h4>
+                        </label>
+                        <input 
+                            type="text"
+                            id="fuel"
+                            class="form-control text-center"
+                            [ngModel]="car.fuelType"
+                            name="fuel"
+                            pattern="[A-Za-zÀ-ž]+"
+                            required
+                            #fuelType="ngModel">
+                        <span class="help-block" *ngIf="!fuelType.valid && fuelType.touched">Please enter a valid fuel type!</span>
+                    </div>
+
+                    <span class="pull-right">
+                        <button class="btn btn-success" type="submit" [disabled]="!f.valid">
+                            <span class="glyphicon glyphicon-ok" aria-hidden="true"></span>
+                            Save
+                        </button>
+                        <button class="btn btn-danger" type="button" routerLink="../">
+                            <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+                            Cancel
+                        </button>
+                    </span>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</form>
