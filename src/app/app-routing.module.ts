@@ -6,6 +6,7 @@ import { HomeComponent } from "./home/home.component";
 import { UserComponent } from "./user/user.component";
 import { UserDetailComponent } from "./users/user-detail/user-detail.component";
 import { UserEditComponent } from "./users/user-edit/user-edit.component";
+import { UserInitComponent } from "./users/user-init/user-init.component";
 import { UsersComponent } from "./users/users.component";
 
 const appRoutes: Routes = [
@@ -14,6 +15,7 @@ const appRoutes: Routes = [
     {path: 'details', component: DetailsComponent},
     {path: 'new-user', component: UserComponent},
     {path: 'users', component: UsersComponent, children: [
+        {path: '', component: UserInitComponent},
         {path: ':id', component: UserDetailComponent},
         {path: ':id/edit', component: UserEditComponent},
     ]},
