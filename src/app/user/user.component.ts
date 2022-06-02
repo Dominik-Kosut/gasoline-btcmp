@@ -12,11 +12,10 @@ import { UsersService } from '../users/users.service';
 export class UserComponent implements OnInit {
   constructor(private router: Router,
               private userSrv: UsersService) { }
+
   @ViewChild('f') form: NgForm;
 
-  ngOnInit(): void {
-
-  }
+  ngOnInit(): void {}
 
   onSubmit(){
     console.log(this.form);
