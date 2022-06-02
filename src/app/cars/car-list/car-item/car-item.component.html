@@ -2,9 +2,18 @@
     class="list-group-item clearfix"
     [routerLink]="['/cars', car?.id]">
     <div class="pull-left">
-        <h4 class="list-goup-item-heading">Car type: {{car?.carType}}</h4>
-        <p class="list-goup-item-text">Car color: {{car?.color}}</p>
-        <!-- <p class="list-goup-item-text">Age: {{user?.age}}</p> -->
+        <ul class="list-inline">
+            <li><h4 class="list-goup-item-heading text-right">Type: </h4></li>
+            <li><h5 class="list-goup-item-text">{{car.carType}}</h5></li>
+        </ul>
+        <ul class="list-inline">
+            <li><h4 class="list-goup-item-heading text-right">Color: </h4></li>
+            <li><h5 class="list-goup-item-text">{{car.color}}</h5></li>
+        </ul>
+        <ul class="list-inline">
+            <li><h4 class="list-goup-item-heading text-right">Fuel: </h4></li>
+            <li><h5 class="list-goup-item-text">{{car.fuelType}}</h5></li>
+        </ul>
     </div>
     <span class="pull-right">
         <img src="https://cdn-icons-png.flaticon.com/512/215/215825.png"

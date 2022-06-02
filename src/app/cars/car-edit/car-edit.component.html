@@ -20,7 +20,7 @@
                             class="form-control text-center"
                             [ngModel]="car.carType"
                             name="type"
-                            pattern="[A-Za-zÀ-ž\s -]+"
+                            pattern="[1-9A-Za-zÀ-ž ]{0,18}$"
                             required
                             #carType="ngModel">
                         <span class="help-block" *ngIf="!carType.valid && carType.touched">Please enter a valid car type!</span>
@@ -36,7 +36,7 @@
                             class="form-control text-center"
                             [ngModel]="car.color"
                             name="color"
-                            pattern="[A-Za-zÀ-ž]+"
+                            pattern="[1-9A-Za-zÀ-ž ]{0,18}$"
                             required
                             #carColor="ngModel">
                         <span class="help-block" *ngIf="!carColor.valid && carColor.touched">Please enter a valid color!</span>
@@ -52,7 +52,7 @@
                             class="form-control text-center"
                             [ngModel]="car.fuelType"
                             name="fuel"
-                            pattern="[A-Za-zÀ-ž]+"
+                            pattern="[1-9A-Za-zÀ-ž ]{0,18}$"
                             required
                             #fuelType="ngModel">
                         <span class="help-block" *ngIf="!fuelType.valid && fuelType.touched">Please enter a valid fuel type!</span>
