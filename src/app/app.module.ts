@@ -21,6 +21,8 @@ import { CarItemComponent } from './cars/car-list/car-item/car-item.component';
 import { CarInitComponent } from './cars/car-init/car-init.component';
 import { CarDetailComponent } from './cars/car-detail/car-detail.component';
 import { CarEditComponent } from './cars/car-edit/car-edit.component';
+import { DetailListComponent } from './details/detail-list/detail-list.component';
+import { DetailItemComponent } from './details/detail-list/detail-item/detail-item.component';
 
 @NgModule({
   declarations: [
@@ -40,7 +42,9 @@ import { CarEditComponent } from './cars/car-edit/car-edit.component';
     CarItemComponent,
     CarInitComponent,
     CarDetailComponent,
-    CarEditComponent
+    CarEditComponent,
+    DetailListComponent,
+    DetailItemComponent
   ],
   imports: [
     HttpClientModule,

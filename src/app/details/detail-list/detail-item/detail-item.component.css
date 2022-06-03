@@ -1,0 +1,21 @@
+.btn {
+    margin-left: 5px;
+    margin-top: 20px;
+}
+
+.list-group-item {
+    margin-bottom: 10px;
+}
+
+h4 {
+    margin: 0px;
+}
+
+.list-inline {
+    margin-bottom: 0;
+    margin-left: 5px;
+}
+
+.list-inline li {
+    min-width: 100px;
+}

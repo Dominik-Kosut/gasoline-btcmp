@@ -1,0 +1,6 @@
+<!-- <app-detail-item *ngFor="let detail of details" [detailInfo]="detail"></app-detail-item> -->
+<div class="row">
+    <div class="col-xs-3" *ngFor="let detail of details" >
+        <app-detail-item [detailInfo]="detail"></app-detail-item>
+    </div>
+</div>
