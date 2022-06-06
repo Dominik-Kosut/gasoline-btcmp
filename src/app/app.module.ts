@@ -12,7 +12,6 @@ import { UserDetailComponent } from './users/user-detail/user-detail.component';
 import { UserEditComponent } from './users/user-edit/user-edit.component';
 import { CarsComponent } from './cars/cars.component';
 import { DetailsComponent } from './details/details.component';
-import { FormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { NavigationComponent } from './navigation/navigation.component';
 import { CarComponent } from './car/car.component';
@@ -24,6 +23,8 @@ import { CarEditComponent } from './cars/car-edit/car-edit.component';
 import { DetailListComponent } from './details/detail-list/detail-list.component';
 import { DetailItemComponent } from './details/detail-list/detail-item/detail-item.component';
 import { DetailComponent } from './detail/detail.component';
+import { FormsModule } from '@angular/forms';
+import { DetailEditComponent } from './details/detail-edit/detail-edit.component';
 
 @NgModule({
   declarations: [
@@ -46,12 +47,13 @@ import { DetailComponent } from './detail/detail.component';
     CarEditComponent,
     DetailListComponent,
     DetailItemComponent,
+    DetailEditComponent,
     DetailComponent
   ],
   imports: [
     HttpClientModule,
-    BrowserModule,
     FormsModule,
+    BrowserModule,
     AppRoutingModule
   ],
   providers: [],

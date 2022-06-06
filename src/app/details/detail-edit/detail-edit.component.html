@@ -1,1 +1,73 @@
-<p>detail-edit works!</p>
+<form (ngSubmit)="onSubmit()" #f="ngForm">
+    <div class="row">
+        <div class="col-xs-4 col-xs-offset-4 text-center">
+            <h2>EDIT DETAIL</h2>
+            <hr>
+            <div class="panel panel-warning">
+                <div class="panel-heading">
+                    <h4><b>EDIT DETAIL #{{detail?.id}}</b></h4>
+                </div>
+
+                <div class="panel-body">
+                    <div class="form-group">
+                        <label for="type">PRICE</label>
+                        <input type="number"
+                            id="price"
+                            class="form-control text-center"
+                            [ngModel]="detail?.price"
+                            name="price"
+                            required
+                            #detPrice="ngModel">
+                        <span class="help-block" *ngIf="!detPrice.valid && detPrice.touched">Please enter a valid price!</span>
+                    </div>
+                    <div class="form-group">
+                        <label for="color">KILOMETERS</label>
+                        <input type="number"
+                            id="kilometers"
+                            class="form-control text-center"
+                            [ngModel]="detail?.kilometers"
+                            name="kilometers"
+                            required
+                            #detKilometers="ngModel">
+                        <span class="help-block" *ngIf="!detKilometers.valid && detKilometers.touched">Please enter a valid kilometers!</span>
+                    </div>
+                    <div class="form-group">
+                        <label for="fuel">AMOUNT</label>
+                        <input type="number"
+                            id="amount"
+                            class="form-control text-center"
+                            [ngModel]="detail?.amount"
+                            name="amount"
+                            required
+                            #detAmount="ngModel">
+                        <span class="help-block" *ngIf="!detAmount.valid && detAmount.touched">Please enter a valid amount!</span>
+                    </div>
+                    <div class="form-group">
+                        <label for="fuel">INFO</label>
+                        <input type="text"
+                            id="info"
+                            class="form-control text-center"
+                            [ngModel]="detail?.info"
+                            name="info"
+                            required
+                            #detInfo="ngModel">
+                        <span class="help-block" *ngIf="!detInfo.valid && detInfo.touched">Please enter a valid information!</span>
+                    </div>
+    
+                    <div>
+                        <span class="pull-right">
+                            <button class="btn btn-success" type="submit" [disabled]="!f.valid">
+                                <span class="glyphicon glyphicon-ok" aria-hidden="true"></span>
+                                Save
+                            </button>
+                            <button class="btn btn-danger" type="button" [routerLink]="['/details']">
+                                <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+                                Cancel
+                            </button>
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>

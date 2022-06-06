@@ -15,6 +15,14 @@ export class DetailsService{
         return this.http.get<Detail[]>(this.apiServerUrl + `/cars/${carId}/details`);
     }
 
+    getDetail(id: number){
+        return this.http.get<Detail>(this.apiServerUrl + `/details/${id}`);
+    }
+
+    updateDetail(id: number, detail: Detail){
+        return this.http.put<Detail>(this.apiServerUrl + `/details/${id}`, detail);
+    }
+
     addNewDetail(carId: number, newDetail: Detail){
         return this.http.post<Detail>(this.apiServerUrl + `/cars/${carId}/details`, newDetail);
     }
