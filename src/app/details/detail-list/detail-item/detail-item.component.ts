@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Detail } from '../../detail.module';
 import { DetailsService } from '../../details.service';
 
@@ -10,7 +11,8 @@ import { DetailsService } from '../../details.service';
 export class DetailItemComponent implements OnInit {
 
   constructor(private detailServ: DetailsService,
-              ) { }
+              private router: Router,
+              private route: ActivatedRoute) { }
 
   @Input('detailInfo') detail: Detail;
 
@@ -18,7 +20,7 @@ export class DetailItemComponent implements OnInit {
   }
 
   onEditDetail(id: number){
-    
+    this.router.navigate([id, 'edit'], {relativeTo: this.route});
   }
 
   onDeleteDetail(id: number){

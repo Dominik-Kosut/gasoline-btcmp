@@ -1,9 +1,7 @@
 <div class="row">
     <div class="col-xs-12">
         <div *ngIf="selectedCar">
-            <h1 class="text-center">DEDAIL INFORMATION FOR CAR: #{{selectedCar}}</h1>
-            <hr>
-            <app-detail-list></app-detail-list>
+            <router-outlet></router-outlet>
         </div>
     </div>
 </div>

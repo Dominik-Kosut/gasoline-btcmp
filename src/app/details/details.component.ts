@@ -16,13 +16,13 @@ export class DetailsComponent implements OnInit, OnDestroy{
 
   ngOnInit(): void {
     this.selectedCar = this.carsServ.getCarId();
-    if(!this.selectedCar){
+    if(!this.selectedCar){              // nepusti to dokud nebude vyplněn carID
         this.router.navigate(['cars']);
     }
   }
 
   ngOnDestroy(): void {
-    this.carsServ.setCarId(null);
+    // this.carsServ.setCarId(null);
   }
 
 }

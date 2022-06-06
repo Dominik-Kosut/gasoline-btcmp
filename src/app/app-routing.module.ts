@@ -5,6 +5,9 @@ import { CarDetailComponent } from "./cars/car-detail/car-detail.component";
 import { CarEditComponent } from "./cars/car-edit/car-edit.component";
 import { CarInitComponent } from "./cars/car-init/car-init.component";
 import { CarsComponent } from "./cars/cars.component";
+import { DetailComponent } from "./detail/detail.component";
+import { DetailEditComponent } from "./details/detail-edit/detail-edit.component";
+import { DetailListComponent } from "./details/detail-list/detail-list.component";
 import { DetailsComponent } from "./details/details.component";
 import { HomeComponent } from "./home/home.component";
 import { UserComponent } from "./user/user.component";
@@ -27,7 +30,11 @@ const appRoutes: Routes = [
         {path: ':id', component: UserDetailComponent},
         {path: ':id/edit', component: UserEditComponent},
     ]},
-    {path: 'details', component: DetailsComponent},
+    {path: 'details', component: DetailsComponent, children: [
+        {path: '', component: DetailListComponent},
+        {path: 'new', component: DetailComponent},
+        {path: ':id/edit', component: DetailEditComponent},
+    ]},
     {path: '**', component: HomeComponent}
 ]
 

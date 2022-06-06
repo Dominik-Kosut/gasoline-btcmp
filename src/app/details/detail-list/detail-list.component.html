@@ -1,4 +1,12 @@
-<!-- <app-detail-item *ngFor="let detail of details" [detailInfo]="detail"></app-detail-item> -->
+<h1 class="text-center">DEDAIL INFORMATION FOR CAR: #{{carId}}
+    <span class="pull-left">
+        <button class="btn btn-success" (click)="onAddNewDetail()">
+            <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+            Add new detail
+        </button>
+    </span>
+</h1>
+<hr>
 <div class="row">
     <div class="col-xs-3" *ngFor="let detail of details" >
         <app-detail-item [detailInfo]="detail"></app-detail-item>

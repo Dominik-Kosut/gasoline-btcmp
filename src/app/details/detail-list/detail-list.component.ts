@@ -1,4 +1,5 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { CarsService } from 'src/app/cars/cars.service';
 import { Detail } from '../detail.module';
@@ -12,16 +13,20 @@ import { DetailsService } from '../details.service';
 export class DetailListComponent implements OnInit, OnDestroy{
 
   constructor(private detailServ: DetailsService,
-              private carService: CarsService){}
+              private carService: CarsService,
+              private router: Router,
+              private route: ActivatedRoute){}
 
   details: Detail[];
   detailObs: Subscription;
+  carId: number;
   
   ngOnInit(): void {
-    this.getCarDetails();
+    this.carId = this.carService.getCarId();
+    this.getCarDetails(this.carId);
     this.detailObs = this.detailServ.detailChange.subscribe({
       next: (response: boolean) => {
-        this.getCarDetails();
+        this.getCarDetails(this.carId);
       }
     });
   }
@@ -30,8 +35,12 @@ export class DetailListComponent implements OnInit, OnDestroy{
     this.detailObs.unsubscribe();
   }
 
-  private getCarDetails(){
-    this.detailServ.getCarDetails(this.carService.getCarId()).subscribe({
+  onAddNewDetail(){
+    this.router.navigate(['new'], {relativeTo: this.route});
+  }
+
+  private getCarDetails(id: number){
+    this.detailServ.getCarDetails(id).subscribe({
       next: (response: Detail[]) => {
         this.details = response;
       }

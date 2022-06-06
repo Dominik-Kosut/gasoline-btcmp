@@ -23,6 +23,7 @@ import { CarDetailComponent } from './cars/car-detail/car-detail.component';
 import { CarEditComponent } from './cars/car-edit/car-edit.component';
 import { DetailListComponent } from './details/detail-list/detail-list.component';
 import { DetailItemComponent } from './details/detail-list/detail-item/detail-item.component';
+import { DetailComponent } from './detail/detail.component';
 
 @NgModule({
   declarations: [
@@ -44,7 +45,8 @@ import { DetailItemComponent } from './details/detail-list/detail-item/detail-it
     CarDetailComponent,
     CarEditComponent,
     DetailListComponent,
-    DetailItemComponent
+    DetailItemComponent,
+    DetailComponent
   ],
   imports: [
     HttpClientModule,
