@@ -14,4 +14,8 @@ export class DetailsService{
     getCarDetails(carId: number){
         return this.http.get<Detail[]>(this.apiServerUrl + `/cars/${carId}/details`);
     }
+
+    deleteDetail(detailId: number){
+        return this.http.delete<boolean>(this.apiServerUrl + `/details/${detailId}`);
+    }
 }
