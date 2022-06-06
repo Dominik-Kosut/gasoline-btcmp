@@ -12,6 +12,6 @@ export class DetailsService{
     detailChange = new Subject<boolean>();
 
     getCarDetails(carId: number){
-        return this.http.get<Detail[]>(this.apiServerUrl + `/cars/${1}/details`);
+        return this.http.get<Detail[]>(this.apiServerUrl + `/cars/${carId}/details`);
     }
 }

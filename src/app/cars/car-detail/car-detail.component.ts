@@ -26,6 +26,12 @@ export class CarDetailComponent implements OnInit {
 
   }
 
+  onInfoCar(id: number){
+    //Opravit!
+    this.carsServ.setCarId(id);
+    this.router.navigate(['/details']);
+  }
+
   onEditCar(id: number){
     this.router.navigate(['edit'], {relativeTo: this.route});
   }
@@ -41,10 +47,6 @@ export class CarDetailComponent implements OnInit {
       }
     });
   }
-
-
-
-
 
 
   private garCarById(id: number){

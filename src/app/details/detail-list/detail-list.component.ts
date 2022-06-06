@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Subscription } from 'rxjs';
+import { CarsService } from 'src/app/cars/cars.service';
 import { Detail } from '../detail.module';
 import { DetailsService } from '../details.service';
 
@@ -7,28 +9,34 @@ import { DetailsService } from '../details.service';
   templateUrl: './detail-list.component.html',
   styleUrls: ['./detail-list.component.css']
 })
-export class DetailListComponent implements OnInit {
+export class DetailListComponent implements OnInit, OnDestroy{
 
-  constructor(private detailServ: DetailsService) { }
+  constructor(private detailServ: DetailsService,
+              private carService: CarsService){}
 
   details: Detail[];
-
+  detailObs: Subscription;
+  
   ngOnInit(): void {
-    this.getAllCarDetails();
-    this.detailServ.detailChange.subscribe({
-      next: (status: boolean) => {
-        this.getAllCarDetails();
+    this.getCarDetails();
+    this.detailObs = this.detailServ.detailChange.subscribe({
+      next: (response: boolean) => {
+        this.getCarDetails();
       }
     });
   }
 
+  ngOnDestroy(): void {
+    this.detailObs.unsubscribe();
+  }
 
-  private getAllCarDetails(){
-    this.detailServ.getCarDetails(1).subscribe({
+  private getCarDetails(){
+    this.detailServ.getCarDetails(this.carService.getCarId()).subscribe({
       next: (response: Detail[]) => {
         this.details = response;
       }
     });
   }
+
 
 }

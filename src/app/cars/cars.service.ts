@@ -9,7 +9,9 @@ export class CarsService{
     constructor(private http: HttpClient){}
 
     private apiServerUrl = environment.apiBaseUrl;
+    private currentCarId: number;
     carChange = new Subject<boolean>();
+
 
     getAllCars(){
         return this.http.get<Car[]>(this.apiServerUrl + '/cars');
@@ -29,5 +31,13 @@ export class CarsService{
 
     updateCar(id: number, car: Car){
         return this.http.put<Car>(this.apiServerUrl + `/cars/${id}`, car);
+    }
+
+    getCarId(){
+        return this.currentCarId;
+    }
+
+    setCarId(id: number){
+        this.currentCarId = id;
     }
 }
