@@ -16,6 +16,7 @@
                             class="form-control text-center"
                             [ngModel]="detail?.price"
                             name="price"
+                            pattern=".{1,14}"
                             required
                             #detPrice="ngModel">
                         <span class="help-block" *ngIf="!detPrice.valid && detPrice.touched">Please enter a valid price!</span>
@@ -27,6 +28,7 @@
                             class="form-control text-center"
                             [ngModel]="detail?.kilometers"
                             name="kilometers"
+                            pattern=".{1,14}"
                             required
                             #detKilometers="ngModel">
                         <span class="help-block" *ngIf="!detKilometers.valid && detKilometers.touched">Please enter a valid kilometers!</span>
@@ -38,6 +40,7 @@
                             class="form-control text-center"
                             [ngModel]="detail?.amount"
                             name="amount"
+                            pattern=".{1,14}"
                             required
                             #detAmount="ngModel">
                         <span class="help-block" *ngIf="!detAmount.valid && detAmount.touched">Please enter a valid amount!</span>
@@ -49,6 +52,7 @@
                             class="form-control text-center"
                             [ngModel]="detail?.info"
                             name="info"
+                            pattern=".{5,15}"
                             required
                             #detInfo="ngModel">
                         <span class="help-block" *ngIf="!detInfo.valid && detInfo.touched">Please enter a valid information!</span>
