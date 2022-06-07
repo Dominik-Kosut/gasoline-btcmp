@@ -1,9 +1,8 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
-import { from } from 'rxjs';
-import { Car } from '../cars/car.module';
-import { CarsService } from '../cars/cars.service';
+import { Car } from '../car.module';
+import { CarsService } from '../cars.service';
 
 @Component({
   selector: 'app-car',

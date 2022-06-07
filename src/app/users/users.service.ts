@@ -9,6 +9,7 @@ export class UsersService{
     constructor(private http: HttpClient){}
 
     private apiServerUrl = environment.apiBaseUrl;
+    private currentUserId: number;
     usersChange = new Subject<boolean>();
 
     getAllUsers(){
@@ -29,5 +30,13 @@ export class UsersService{
 
     updateUser(id: number, owner: User){
         return this.http.put<User>(this.apiServerUrl + `/owners/${id}`, owner);
+    }
+
+    getUserId(){
+        return this.currentUserId;
+    }
+
+    setUserId(id: number){
+        this.currentUserId = id;
     }
 }

@@ -9,6 +9,7 @@ import { UsersService } from '../users.service';
   styleUrls: ['./user-detail.component.css']
 })
 export class UserDetailComponent implements OnInit {
+
   constructor(private usersServ: UsersService,
               private route: ActivatedRoute,
               private router: Router) { }
@@ -42,10 +43,10 @@ export class UserDetailComponent implements OnInit {
     });
   }
 
-
-
-
-
+  onCarList(id: number){
+    this.usersServ.setUserId(id);
+    this.router.navigate(['cars']);
+  }
 
   private getUserById(id: number){
     this.usersServ.getUserById(id).subscribe({

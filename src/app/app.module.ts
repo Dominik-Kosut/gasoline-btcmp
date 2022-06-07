@@ -10,21 +10,23 @@ import { UserListComponent } from './users/user-list/user-list.component';
 import { UserItemComponent } from './users/user-list/user-item/user-item.component';
 import { UserDetailComponent } from './users/user-detail/user-detail.component';
 import { UserEditComponent } from './users/user-edit/user-edit.component';
-import { CarsComponent } from './cars/cars.component';
 import { DetailsComponent } from './details/details.component';
 import { AppRoutingModule } from './app-routing.module';
 import { NavigationComponent } from './navigation/navigation.component';
-import { CarComponent } from './car/car.component';
-import { CarListComponent } from './cars/car-list/car-list.component';
-import { CarItemComponent } from './cars/car-list/car-item/car-item.component';
-import { CarInitComponent } from './cars/car-init/car-init.component';
-import { CarDetailComponent } from './cars/car-detail/car-detail.component';
-import { CarEditComponent } from './cars/car-edit/car-edit.component';
 import { DetailListComponent } from './details/detail-list/detail-list.component';
 import { DetailItemComponent } from './details/detail-list/detail-item/detail-item.component';
 import { DetailComponent } from './detail/detail.component';
 import { FormsModule } from '@angular/forms';
 import { DetailEditComponent } from './details/detail-edit/detail-edit.component';
+
+import { CarsComponent } from './cars/cars.component';
+import { CarComponent } from './cars/car/car.component';
+import { CarsInitComponent } from './cars/cars-init/cars-init.component';
+import { CarDetailComponent } from './cars/cars-init/car-detail/car-detail.component';
+import { CarEditComponent } from './cars/cars-init/car-edit/car-edit.component';
+import { CarInitComponent } from './cars/cars-init/car-init/car-init.component';
+import { CarListComponent } from './cars/cars-init/car-list/car-list.component';
+import { CarItemComponent } from './cars/cars-init/car-list/car-item/car-item.component';
 
 @NgModule({
   declarations: [
@@ -37,14 +39,15 @@ import { DetailEditComponent } from './details/detail-edit/detail-edit.component
     UserDetailComponent,
     UserEditComponent,
     CarsComponent,
-    DetailsComponent,
-    NavigationComponent,
     CarComponent,
-    CarListComponent,
-    CarItemComponent,
-    CarInitComponent,
+    CarsInitComponent,
     CarDetailComponent,
     CarEditComponent,
+    CarInitComponent,
+    CarListComponent,
+    CarItemComponent,
+    DetailsComponent,
+    NavigationComponent,
     DetailListComponent,
     DetailItemComponent,
     DetailEditComponent,

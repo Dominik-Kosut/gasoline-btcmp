@@ -1,8 +1,8 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
-import { Car } from '../car.module';
-import { CarsService } from '../cars.service';
+import { Car } from '../../car.module';
+import { CarsService } from '../../cars.service';
 
 @Component({
   selector: 'app-car-edit',
@@ -10,7 +10,7 @@ import { CarsService } from '../cars.service';
   styleUrls: ['./car-edit.component.css']
 })
 export class CarEditComponent implements OnInit {
-  constructor(private carsSrv: CarsService,
+  constructor(private carsServ: CarsService,
               private route: ActivatedRoute,
               private router: Router) { }
 
@@ -19,7 +19,7 @@ export class CarEditComponent implements OnInit {
   car: Car;
 
   ngOnInit(): void {
-    this.carsSrv.getCarById(+this.route.snapshot.params['id']).subscribe({
+    this.carsServ.getCarById(+this.route.snapshot.params['id']).subscribe({
       next: (resp: Car) => {
         this.car = resp;
       }
@@ -30,9 +30,9 @@ export class CarEditComponent implements OnInit {
     this.car.carType = this.signupForm.value.type;
     this.car.color = this.signupForm.value.color;
     this.car.fuelType = this.signupForm.value.fuel;
-    this.carsSrv.updateCar(this.car.id, this.car).subscribe({
+    this.carsServ.updateCar(this.car.id, this.car).subscribe({
       next: (response: Car) => {
-        this.carsSrv.carChange.next(true);
+        this.carsServ.carChange.next(true);
         this.router.navigate(['../'], {relativeTo: this.route});
     }
     });

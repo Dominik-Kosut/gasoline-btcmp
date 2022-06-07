@@ -1,9 +1,10 @@
 import { NgModule } from "@angular/core";
 import { RouterModule, Routes } from "@angular/router";
-import { CarComponent } from "./car/car.component";
-import { CarDetailComponent } from "./cars/car-detail/car-detail.component";
-import { CarEditComponent } from "./cars/car-edit/car-edit.component";
-import { CarInitComponent } from "./cars/car-init/car-init.component";
+import { CarComponent } from "./cars/car/car.component";
+import { CarDetailComponent } from "./cars/cars-init/car-detail/car-detail.component";
+import { CarEditComponent } from "./cars/cars-init/car-edit/car-edit.component";
+import { CarInitComponent } from "./cars/cars-init/car-init/car-init.component";
+import { CarsInitComponent } from "./cars/cars-init/cars-init.component";
 import { CarsComponent } from "./cars/cars.component";
 import { DetailComponent } from "./detail/detail.component";
 import { DetailEditComponent } from "./details/detail-edit/detail-edit.component";
@@ -18,17 +19,19 @@ import { UsersComponent } from "./users/users.component";
 
 const appRoutes: Routes = [
     {path: '', component: HomeComponent},
-    {path: 'new-car', component: CarComponent},
-    {path: 'cars', component: CarsComponent, children: [
-        {path: '', component: CarInitComponent},
-        {path: ':id', component: CarDetailComponent},
-        {path: ':id/edit', component: CarEditComponent}
-    ]},
     {path: 'new-user', component: UserComponent},
     {path: 'users', component: UsersComponent, children: [
         {path: '', component: UserInitComponent},
         {path: ':id', component: UserDetailComponent},
         {path: ':id/edit', component: UserEditComponent},
+    ]},
+    {path: 'cars', component: CarsComponent, children: [
+        {path: 'new-car', component: CarComponent},
+        {path: '', component: CarsInitComponent, children: [
+            {path: '', component: CarInitComponent},
+            {path: ':id', component: CarDetailComponent},
+            {path: ':id/edit', component: CarEditComponent}
+        ]},
     ]},
     {path: 'details', component: DetailsComponent, children: [
         {path: '', component: DetailListComponent},

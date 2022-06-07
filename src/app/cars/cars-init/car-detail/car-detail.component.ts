@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Params, Router } from '@angular/router';
-import { Car } from '../car.module';
-import { CarsService } from '../cars.service';
+import { Car } from '../../car.module';
+import { CarsService } from '../../cars.service';
 
 @Component({
   selector: 'app-car-detail',

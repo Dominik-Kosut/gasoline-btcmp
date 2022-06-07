@@ -59,8 +59,14 @@
                     </div>
 
                     <span class="pull-right">
-                        <button class="btn btn-success" type="submit" [disabled]="!f.valid">Save</button>
-                        <button class="btn btn-danger" type="button" routerLink="../">Cancel</button>
+                        <button class="btn btn-success" type="submit" [disabled]="!f.valid">
+                            <span class="glyphicon glyphicon-ok" aria-hidden="true"></span>
+                            Save
+                        </button>
+                        <button class="btn btn-danger" type="button" routerLink="../">
+                            <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+                            Cancel
+                        </button>
                     </span>
 
                 </div>
