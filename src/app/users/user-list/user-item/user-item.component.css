@@ -1,3 +1,24 @@
 .list-group-item {
     margin-bottom: 10px;
 }
+
+h4 {
+    margin: 0px;
+}
+
+h5.header {
+    font-size: large;
+}
+
+.pull-left {
+    margin-top: 15px;
+}
+
+.list-inline {
+    margin-bottom: 0;
+    margin-left: 5px;
+}
+
+.list-inline li {
+    min-width: 60px;
+}

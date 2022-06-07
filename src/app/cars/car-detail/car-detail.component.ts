@@ -9,6 +9,7 @@ import { CarsService } from '../cars.service';
   styleUrls: ['./car-detail.component.css']
 })
 export class CarDetailComponent implements OnInit {
+  
   constructor(private carsServ: CarsService,
               private route: ActivatedRoute,
               private router: Router) { }
@@ -27,7 +28,6 @@ export class CarDetailComponent implements OnInit {
   }
 
   onInfoCar(id: number){
-    //Opravit!
     this.carsServ.setCarId(id);
     this.router.navigate(['/details']);
   }
@@ -42,12 +42,12 @@ export class CarDetailComponent implements OnInit {
         if(response){
           console.log('Auto bylo vymazano');
           this.carsServ.carChange.next(true);
+          this.carsServ.setCarId(null);
           this.router.navigate(['cars']);
         }
       }
     });
   }
-
 
   private garCarById(id: number){
     this.carsServ.getCarById(id).subscribe({

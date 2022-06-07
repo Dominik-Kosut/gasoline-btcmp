@@ -3,9 +3,14 @@
     class="list-group-item clearfix"
     [routerLink]="['/users', user?.id]">
     <div class="pull-left">
-        <h4 class="list-goup-item-heading">Name: {{user?.name}} {{user?.surname}}</h4>
-        <p class="list-goup-item-text">Email: {{user?.email}}</p>
-        <!-- <p class="list-goup-item-text">Age: {{user?.age}}</p> -->
+        <ul class="list-inline">
+            <li><h4 class="list-goup-item-heading text-right">Name: </h4></li>
+            <li><h5 class="list-goup-item-text header">{{user?.surname | uppercase}} {{user?.name | uppercase}}</h5></li>
+        </ul>
+        <ul class="list-inline">
+            <li><h4 class="list-goup-item-heading text-right">Email: </h4></li>
+            <li><h5 class="list-goup-item-text">{{user?.email}}</h5></li>
+        </ul>
     </div>
     <span class="pull-right">
         <img src="https://cdn-icons-png.flaticon.com/512/219/219986.png"
