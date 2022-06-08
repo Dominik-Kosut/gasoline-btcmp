@@ -17,6 +17,10 @@ export class CarsService{
         return this.http.get<Car[]>(this.apiServerUrl + '/cars');
     }
 
+    getAllUsersCars(id: number){
+        return this.http.get<Car[]>(this.apiServerUrl + `/owners/${id}/cars`);
+    }
+
     getCarById(id: number){
         return this.http.get<Car>(this.apiServerUrl + `/cars/${id}`);
     }
@@ -27,6 +31,10 @@ export class CarsService{
 
     addNewCar(newCar: Car){
         return this.http.post<Car>(this.apiServerUrl + '/cars', newCar);
+    }
+
+    addNewCarToOwner(id: number, newCar: Car){
+        return this.http.post<Car>(this.apiServerUrl + `/owners/${id}/cars`, newCar);
     }
 
     updateCar(id: number, car: Car){

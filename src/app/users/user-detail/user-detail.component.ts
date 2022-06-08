@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Params, Router } from '@angular/router';
+import { CarsService } from 'src/app/cars/cars.service';
 import { User } from '../users.module';
 import { UsersService } from '../users.service';
 
@@ -11,6 +12,7 @@ import { UsersService } from '../users.service';
 export class UserDetailComponent implements OnInit {
 
   constructor(private usersServ: UsersService,
+              private carsServ: CarsService,
               private route: ActivatedRoute,
               private router: Router) { }
 
@@ -37,6 +39,8 @@ export class UserDetailComponent implements OnInit {
         if(response){
           console.log('Uzivatel byl vymazan');
           this.usersServ.usersChange.next(true);
+          this.carsServ.setCarId(null);
+          this.usersServ.setUserId(null);
           this.router.navigate(['users']);
         }
       }
@@ -45,6 +49,7 @@ export class UserDetailComponent implements OnInit {
 
   onCarList(id: number){
     this.usersServ.setUserId(id);
+    this.carsServ.setCarId(null);
     this.router.navigate(['cars']);
   }
 
