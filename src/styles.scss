@@ -1,0 +1,9 @@
+@import "ag-grid-community/dist/styles/ag-grid.css";
+@import "ag-grid-community/dist/styles/ag-theme-balham-dark.css";
+@import "ag-grid-community/dist/styles/ag-theme-alpine.css";
+@import "ag-grid-community/dist/styles/ag-theme-material.css";
+
+.ag-theme-alpine .ag-row-hover {
+    background: rgba(0, 140, 255, 0.1);
+}
+

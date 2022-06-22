@@ -1,12 +1,41 @@
-<div class="row">
-    <div class="col-xs-12">
-        <div class="jumbotron text-center">
-            <!-- <h3>Welcome to</h3>
-            <div class="row">
-                <h1>GASOLINE MANAGER</h1>
-            </div>
-            <h6><em>DK - bootcamp 2022</em></h6> -->
-            <h1>AG-Grid Test</h1>
-        </div>
-    </div>
+<h1 class="text-center">USERS OVERVIEW
+    <span>
+        <button class="btn btn-danger pull-right" (click)="deleteAllSelectedUsers()">
+            <span class="glyphicon glyphicon-minus" aria-hidden="true"></span>
+            Delete selected
+        </button>
+        <button class="btn btn-primary pull-right" (click)="showAllSelectedUsers()">
+            <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+            Show selected
+        </button>
+        <button class="btn btn-warning pull-right" (click)="refreshCellsBtn()">
+            <span class="glyphicon glyphicon-repeat" aria-hidden="true"></span>
+            Refresh cells
+        </button>
+    </span>
+</h1>
+<p>{{mojeData}}</p>
+<div class="ag-theme-alpine">
+    <!-- <ag-grid-angular
+        style="width: 100%; height: 80vh"
+        [columnDefs]="colDefs"
+        [rowData]="rowData"
+        (gridReady)="onGridReady($event)"
+        rowSelection='multiple'
+        suppressRowClickSelection="true"
+        (selectionChanged)="onSelectionChanged()"
+        [enableCellChangeFlash]="true"
+    >
+    
+    rowSelection='multiple'             hybrat vice radku
+    rowMultiSelectWithClick="true"      vybrat je kliknutim
+    suppressRowClickSelection="true"    vybrat pouze přes checkboxiky
+    
+    </ag-grid-angular> -->
+    <ag-grid-angular
+    style="width: 100%; height: 80vh"
+    [columnDefs]="colDefs"
+    [rowData]="rowData"
+    (gridReady)="onGridReady($event)">
+    </ag-grid-angular>
 </div>

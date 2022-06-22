@@ -12,7 +12,7 @@ export class UserListComponent implements OnInit {
   constructor(private usersServ: UsersService,
               private router: Router) { }
 
-  users: User[];
+  users: User[] = [];
 
   
 
@@ -23,6 +23,7 @@ export class UserListComponent implements OnInit {
         this.getAllOwners();
       }
     });
+    // console.log(this.usersServ.getUserId());
   }
 
   onAddNewUser(){
@@ -39,9 +40,9 @@ export class UserListComponent implements OnInit {
 
 
   private getAllOwners(){
-    this.usersServ.getAllUsers().subscribe({
-      next: (response: User[]) => {
-        this.users = response;
+    this.usersServ.getUserById(this.usersServ.getUserId()).subscribe({
+      next: (response: User) => {
+        this.users.push(response);
       }
     });
   }

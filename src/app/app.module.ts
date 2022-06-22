@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http'
+import { AgGridModule } from 'ag-grid-angular';
 
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
@@ -27,6 +28,9 @@ import { CarEditComponent } from './cars/cars-init/car-edit/car-edit.component';
 import { CarInitComponent } from './cars/cars-init/car-init/car-init.component';
 import { CarListComponent } from './cars/cars-init/car-list/car-list.component';
 import { CarItemComponent } from './cars/cars-init/car-list/car-item/car-item.component';
+import { AgeCellRender } from './home/age-cell-render.component';
+import { AgeValue } from './home/age-value.component';
+import { MyCustomCellEditor } from './home/my-custom-cell-editor.component';
 
 @NgModule({
   declarations: [
@@ -51,13 +55,17 @@ import { CarItemComponent } from './cars/cars-init/car-list/car-item/car-item.co
     DetailListComponent,
     DetailItemComponent,
     DetailEditComponent,
-    DetailComponent
+    DetailComponent,
+    AgeCellRender,
+    AgeValue,
+    MyCustomCellEditor
   ],
   imports: [
     HttpClientModule,
     FormsModule,
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    AgGridModule
   ],
   providers: [],
   bootstrap: [AppComponent]
