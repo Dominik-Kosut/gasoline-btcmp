@@ -17,21 +17,21 @@ export class HomeComponent implements OnInit {
   private gridApi!: GridApi;
   private selectedRows = [];
   mojeData = '';
-  testNames = ['Dominik', 'Dominika', 'Pavel', 'Pavla', 'Petr', 'Petra', 'Jan', 'Jana']
+  testNames = ['Aneta', 'Antonín', 'Adam', 'Dagmar', 'Dominik', 'Dominika', 'Anežka', 'Dalibor']
 
   constructor(private userServ: UsersService,
               private router: Router){}
 
   colDefs: ColDef[] = [
     {field: 'id', headerName: 'Ref. number'},
-    {field: 'name', sortable: true},
-    {field: 'surname',
+    {field: 'name',
      editable: true,
      cellEditor: MyCustomCellEditor,
      cellEditorPopup: true,
      cellEditorParams: {
       options: this.testNames
      }},
+    {field: 'surname', sortable: true},
     {field: 'email'},
     {field: 'emailShow',
       width: 150,
