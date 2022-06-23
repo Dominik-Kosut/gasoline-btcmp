@@ -16,8 +16,8 @@ import { MyCustomCellEditor } from './my-custom-cell-editor.component';
 export class HomeComponent implements OnInit {
   private gridApi!: GridApi;
   private selectedRows = [];
-  mojeData = '';
-  testNames = ['Aneta', 'Antonín', 'Adam', 'Dagmar', 'Dominik', 'Dominika', 'Anežka', 'Dalibor']
+  testNames = ['Aneta', 'Antonín', 'Adam', 'Dagmar', 'Dominik', 'Dominika', 'Anežka', 'Dalibor',
+               'David', 'Marek', 'Marie', 'Antonie', 'Daniel', 'Daniela', 'Martin', 'Radim']
 
   constructor(private userServ: UsersService,
               private router: Router){}
@@ -31,11 +31,8 @@ export class HomeComponent implements OnInit {
      cellEditorParams: {
       options: this.testNames
      }},
-    {field: 'surname', sortable: true},
+    {field: 'surname'},
     {field: 'email'},
-    {field: 'emailShow',
-      width: 150,
-      cellRenderer: AgeCellRender},
     {field: 'age',
      filter: 'agNumberColumnFilter',
      filterParams: {

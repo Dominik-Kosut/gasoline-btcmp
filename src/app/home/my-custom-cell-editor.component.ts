@@ -5,6 +5,7 @@ import { ICellEditorParams, ICellRendererParams } from "ag-grid-community";
 @Component({
     selector: 'my-custom-cell-editor',
     templateUrl: './search-drop.component.html',
+    styleUrls: ['./search-drop.component.css']
 })
 export class MyCustomCellEditor implements ICellEditorAngularComp {
     params!: any;
